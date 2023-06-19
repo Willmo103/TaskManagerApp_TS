@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jasmine",
-    "compile": "tsc --outDir ./dist"
+    "compile": "tsc --outDir ./dist --watch"
   },
   "keywords": [],
   "author": "",
