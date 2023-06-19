@@ -1,3 +1,5 @@
+import User = require('./user');
+
 class Task {
     title: string;
     description: string;
