@@ -1,6 +1,6 @@
 "use strict";
-var User = /** @class */ (function () {
-    function User(firstName, lastName) {
+class User {
+    constructor(firstName, lastName) {
         this.id = User.nextId();
         if (firstName) {
             this.firstName = firstName;
@@ -19,27 +19,26 @@ var User = /** @class */ (function () {
         this._phoneNumber = null;
         this.title = null;
     }
-    User.prototype.setEmail = function (email) {
+    setEmail(email) {
         this._email = email;
-    };
-    User.prototype.setPhoneNumber = function (phoneNumber) {
+    }
+    setPhoneNumber(phoneNumber) {
         this._phoneNumber = phoneNumber;
-    };
-    User.prototype.isAdmin = function () {
+    }
+    isAdmin() {
         return this.admin;
-    };
-    User.prototype.setAdmin = function (admin) {
+    }
+    setAdmin(admin) {
         this.admin = admin;
-    };
-    User.nextId = function () {
-        var id = User._nextId;
+    }
+    static nextId() {
+        let id = User._nextId;
         User._nextId++;
         return id;
-    };
-    User.prototype.toString = function () {
-        return "".concat(this.firstName, " ").concat(this.lastName);
-    };
-    User._nextId = 1;
-    return User;
-}());
+    }
+    toString() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+User._nextId = 1;
 module.exports = User;

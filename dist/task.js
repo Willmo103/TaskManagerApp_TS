@@ -1,21 +1,17 @@
-import User = require('./user');
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Task {
-    title: string;
-    description: string;
-    status: string;
-    assignee: User;
-    dueDate: Date;
-
-    constructor(title: string, description: string, status: string, assignee: User, dueDate: Date) {
+    constructor(title, description, status, assignee, dueDate) {
         if (title) {
             this.title = title;
-        } else {
+        }
+        else {
             throw new Error('title is required');
         }
         if (description) {
             this.description = description;
-        } else {
+        }
+        else {
             throw new Error('description is required');
         }
         this.status = status;

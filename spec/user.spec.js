@@ -1,4 +1,4 @@
-const User = require("../build/user");
+const User = require("../dist/user");
 
 describe("User", () => {
   it("constructor should raise an error if firstName is not provided", () => {
