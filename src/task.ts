@@ -31,6 +31,10 @@ class Task {
         Task._nextId++;
         return id;
     }
+
+    toString(): string {
+        return `${this.title} ${this.description}`;
+    }
 }
 
 export = Task;

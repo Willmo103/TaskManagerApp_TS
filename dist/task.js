@@ -23,6 +23,9 @@ class Task {
         Task._nextId++;
         return id;
     }
+    toString() {
+        return `${this.title} ${this.description}`;
+    }
 }
 Task._nextId = 1;
 module.exports = Task;
