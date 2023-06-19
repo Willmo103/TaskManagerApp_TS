@@ -1,6 +1,8 @@
 import User = require('./user');
 
 class Task {
+    static _nextId: number = 1;
+    id: number;
     title: string;
     description: string;
     status: string;
@@ -18,8 +20,17 @@ class Task {
         } else {
             throw new Error('description is required');
         }
+        this.id = Task.nextId();
         this.status = status;
         this.assignee = assignee;
         this.dueDate = dueDate;
     }
+
+    private static nextId(): number {
+        let id: number = Task._nextId;
+        Task._nextId++;
+        return id;
+    }
 }
+
+export = Task;
