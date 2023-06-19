@@ -13,8 +13,16 @@ class User {
         lastName: string,
     ) {
         this.id = User.nextId();
-        this.firstName = firstName;
-        this.lastName = lastName;
+        if (firstName) {
+            this.firstName = firstName;
+        } else {
+            throw new Error('first name is required');
+        }
+        if (lastName) {
+            this.lastName = lastName;
+        } else {
+            throw new Error("last name is required");
+        }
         this.admin = false;
         this._email = null;
         this._phoneNumber = null;
